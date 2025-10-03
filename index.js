@@ -8,10 +8,12 @@ import { accomodationApi } from '#pods/accomodation/index.js';
 const app = createRestApiServer();
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const staticFilesPath = path.resolve(__dirname, ENV.STATIC_FILES_PATH);
+
 app.use('/', express.static(staticFilesPath));
 app.use(logRequestMiddleware);
 app.use('/api/accomodations', accomodationApi);
 app.use(logErrorRequestMiddleware);
+
 app.listen(ENV.PORT, async () => {
     if (!ENV.IS_API_MOCK) {
         await dbServer.connect(ENV.MONGODB_URL);

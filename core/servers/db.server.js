@@ -5,9 +5,11 @@ const connect = async (connectionURL) => {
     await client.connect();
     dbServer.db = client.db();
 };
+
 const disconnect = async () => {
     await client.close();
 };
+
 export let dbServer = {
     connect,
     disconnect,
