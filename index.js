@@ -15,12 +15,6 @@ app.use('/api/accomodations', accomodationApi);
 app.use(logErrorRequestMiddleware);
 
 app.listen(ENV.PORT, async () => {
-    if (!ENV.IS_API_MOCK) {
-        await dbServer.connect(ENV.MONGODB_URL);
-        console.log('Running DataBase');
-    }
-    else {
-        console.log('Running Mock API');
-    }
+    console.log('Running Mock API');
     console.log(`Server ready at port ${ENV.PORT}`);
 });
