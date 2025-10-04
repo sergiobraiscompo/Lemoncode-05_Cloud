@@ -5,5 +5,4 @@ export const ENV = {
     CORS_ORIGIN: process.env.CORS_ORIGIN,
     CORS_METHODS: process.env.CORS_METHODS,
     IS_API_MOCK: process.env.IS_API_MOCK === "false",
-    MONGODB_URL: process.env.MONGODB_URL
 };
