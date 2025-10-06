@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.test
+mongo-data
+airbnb
+.vs
+.public
+config
+tsconfig.json
+tsconfig.prod.json
