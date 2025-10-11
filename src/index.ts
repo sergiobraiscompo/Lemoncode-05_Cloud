@@ -1,4 +1,4 @@
-import express, {application} from 'express';
+import express, { application } from 'express';
 import path from 'path';
 import url from 'url';
 import {
@@ -14,10 +14,7 @@ const app = createRestApiServer();
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const staticFilesPath = path.resolve(__dirname, ENV.STATIC_FILES_PATH);
 app.use('/', express.static(staticFilesPath));
-app.use(
-  '/',
-  express.static(path.resolve(import.meta.dirname, ENV.STATIC_FILES_PATH))
-);
+
 app.use(logRequestMiddleware);
 
 app.use('/api/accomodations', accomodationApi);
@@ -25,11 +22,7 @@ app.use('/api/accomodations', accomodationApi);
 app.use(logErrorRequestMiddleware);
 
 app.listen(ENV.PORT, async () => {
-  if (!ENV.IS_API_MOCK) {
-    await dbServer.connect(ENV.MONGODB_URL);
-    console.log('Running DataBase');
-  } else {
-    console.log('Running Mock API');
-  }
+  await dbServer.connect(ENV.MONGODB_URL);
+  console.log('Running DataBase');
   console.log(`Server ready at port ${ENV.PORT}`);
 });
