@@ -1,6 +1,6 @@
 
 import { Accomodation, Review } from "../accomodation.model.js";
-import { db } from "../mock-data.js";
+import { db } from "../../mock-data.js";
 import { ObjectId } from "mongodb";
 import { AccomodationRepository } from "./accomodation.repository.js";
 import { getAccomodationContext } from "../accomodation.context.js";
