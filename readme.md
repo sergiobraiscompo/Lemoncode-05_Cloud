@@ -1,19 +1,9 @@
-# Pasos seguidos en el Despliegue Manual Mock
-
-
-### Lo primero es instalar las dependencias de Node para crear el Build además de rimraff
-### Mientras se realiza la instalación de los paquetes se creó un archivo tsconfig para la subida a prod donde se añadieron configuraciones y todos los ficheros de test y carpetas que no se han de subir
-### . Se ha añadido un atajo en el package.json para crear la build con la configuración de la subida a prod y se creó la build
-### Luego se ha probado en local que funciona
-### Se modificó el package.json dentro de dist añadiendo las sólo las dependencias necesarias para subir el código y un script que arranca el index.js con Node
-### Se sube el código a GitHub en un repo público
-### En Render se crea un servicio web usando GitHub con los siguientes parámetros:
-- _Languaje_: Node
-- _Branch_: despliegue-manual-mock
-- _Region_: Frankfurt
-- _Build Command_: NPM Install
-- _Start command_: npm start
-### En _Advanced settings_ añadimos las variables de entorno del archivo _.env_ .
-
-
-
+# Pasos seguidos en el Despliegue Manual Mongo
+## Entramos en mongo atlas y elegimos crear un clúster
+## En configuración avanzada elegimos las configuraciones deseadas y le damos nombre al clúster
+## Después en _network\_access>IP Access List_ vamos a permitir el acceso desde cualquier punto de la red
+## Creamos un usuario para acceder a la base de datos
+## copiamos la connection string que nos facilitan
+## Sustituimos el campo _<db_password>_ por la contraseña de la BBDD
+## Probamos que funciona corriendo el console-runners y comporbando desde Atlas si se han añadido los datos
+## Ahora vamos a render y actualizamos las variables de entorno
