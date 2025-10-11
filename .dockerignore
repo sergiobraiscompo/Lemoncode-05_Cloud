@@ -1,0 +1,12 @@
+node_modules/
+dist/
+mongo-data/
+public/
+.editorconfig
+.env
+.env.example
+.env.test
+.gitignore
+.prettierrc
+create-dev-env.js
+docker-compose.yml
