@@ -10,5 +10,3 @@ Dockerfile Path: ./Dockerfile
 ## Subimos las variables de entorno con las variables IS_API_MOCK y CORS_ORIGIN a false
 ENV IS_API_MOCK=false
 ENV CORS_ORIGIN=false
-
-

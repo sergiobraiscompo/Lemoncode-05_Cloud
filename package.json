@@ -2,7 +2,7 @@
   "name": "bootcamp-backend-lemoncode",
   "type": "module",
   "scripts": {
-"start": "node index.js"
+    "start": "node index.js"
   },
   "imports": {
     "#*": "./*"
